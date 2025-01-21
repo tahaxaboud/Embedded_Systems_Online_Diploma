@@ -11,20 +11,14 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 int main()
 {
-    int a;
-    unsigned long long fact = 1;
+    int a,i,sum=0;
     printf("Enter a integer: ");
     scanf("%d",&a);
-    if(a<0)
-    printf("Error!!! Factorial of negative number doesn't exist");
-    else
+    
+    for(i=1;i<=a;i++)
     {
-        for(int i=1;i<=a;i++)
-        {
-            fact *= i;
-        }
-        printf("Factorial = %llu",fact);
+        sum += i;
     }
-
+    printf("Sum = %d",sum);
     return 0;
 }

@@ -7,18 +7,26 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 int main()
 {
-    int a,sum=0;
-    printf("Enter a integer: ");
-    scanf("%d",&a);
+    char text[100];
+    char reverse[100];
+    int i,length;
     
-    for(int i=1;i<=a;i++)
-    {
-        sum += i;
-    }
-    printf("Sum = %d",sum);
+    printf("Enter a string: ");
+    fflush(stdin); fflush(stdout);
+    fgets(text, sizeof(text), stdin);
+    
+    length = strlen(text)-1;
+
+    for (i = 0; i<length; i++)
+	{
+	    reverse[i] = text[length-i-1];
+	}
+    reverse[length] = '\0';
+    
+    printf("Reverse string is = %s",reverse);
     return 0;
 }
